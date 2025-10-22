@@ -88,7 +88,7 @@ export default function CallLogs({ callHistory, vapiPrivateKey }) {
             transition: 'all 0.2s',
           }}
         >
-          VAPI Call Logs ({vapiCallLogs.length})
+          VOICE AI Call Logs ({vapiCallLogs.length})
         </button>
         <button
           onClick={() => setActiveTab('local')}
