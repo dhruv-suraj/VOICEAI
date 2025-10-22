@@ -4,12 +4,21 @@ import Metrics from './pages/Metrics';
 import StructuredOutputs from './pages/StructuredOutputs';
 import TestSuites from './pages/TestSuites';
 import CallLogs from './pages/CallLogs';
+import AssistantSelector from './components/AssistantSelector';
 
-const VAPI_PUBLIC_KEY = import.meta.env.VITE_VAPI_PUBLIC_KEY || '';
-const VAPI_PRIVATE_KEY = import.meta.env.VITE_VAPI_PRIVATE_KEY || '';
-const VAPI_ASSISTANT_ID = import.meta.env.VITE_VAPI_ASSISTANT_ID || '';
+const VAPI_PHONE_NUMBER_ID = import.meta.env.VITE_VAPI_PHONE_NUMBER_ID || '';
 
-export default function Dashboard({ currentPage, setCurrentPage, callHistory, addToCallHistory }) {
+export default function Dashboard({
+  currentPage,
+  setCurrentPage,
+  callHistory,
+  addToCallHistory,
+  selectedAssistant,
+  onAssistantChange,
+  assistantDetails,
+  vapiPublicKey,
+  vapiPrivateKey,
+}) {
   const navItems = [
     { id: 'overview', label: 'Overview', icon: BarChart3 },
     { id: 'metrics', label: 'Metrics', icon: BarChart3 },
@@ -23,9 +32,11 @@ export default function Dashboard({ currentPage, setCurrentPage, callHistory, ad
       case 'overview':
         return (
           <Overview
-            vapiPublicKey={VAPI_PUBLIC_KEY}
-            vapiPrivateKey={VAPI_PRIVATE_KEY}
-            assistantId={VAPI_ASSISTANT_ID}
+            vapiPublicKey={vapiPublicKey}
+            vapiPrivateKey={vapiPrivateKey}
+            vapiPhoneNumberId={VAPI_PHONE_NUMBER_ID}
+            selectedAssistant={selectedAssistant}
+            assistantDetails={assistantDetails}
             addToCallHistory={addToCallHistory}
           />
         );
@@ -36,9 +47,18 @@ export default function Dashboard({ currentPage, setCurrentPage, callHistory, ad
       case 'test-suites':
         return <TestSuites callHistory={callHistory} />;
       case 'call-logs':
-        return <CallLogs callHistory={callHistory} />;
+        return <CallLogs callHistory={callHistory} vapiPrivateKey={vapiPrivateKey} />;
       default:
-        return <Overview vapiPublicKey={VAPI_PUBLIC_KEY} vapiPrivateKey={VAPI_PRIVATE_KEY} assistantId={VAPI_ASSISTANT_ID} addToCallHistory={addToCallHistory} />;
+        return (
+          <Overview
+            vapiPublicKey={vapiPublicKey}
+            vapiPrivateKey={vapiPrivateKey}
+            vapiPhoneNumberId={VAPI_PHONE_NUMBER_ID}
+            selectedAssistant={selectedAssistant}
+            assistantDetails={assistantDetails}
+            addToCallHistory={addToCallHistory}
+          />
+        );
     }
   };
 
@@ -97,7 +117,19 @@ export default function Dashboard({ currentPage, setCurrentPage, callHistory, ad
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         {/* Header */}
         <div style={{ padding: '20px 32px', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <h2 style={{ margin: 0, fontSize: '24px', fontWeight: '600', color: '#fff' }}>{getPageTitle()}</h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: 1 }}>
+            <h2 style={{ margin: 0, fontSize: '24px', fontWeight: '600', color: '#fff' }}>{getPageTitle()}</h2>
+            {currentPage === 'overview' && (
+              <div style={{ flex: 1, maxWidth: '350px' }}>
+                <AssistantSelector
+                  vapiPrivateKey={vapiPrivateKey}
+                  selectedAssistantId={selectedAssistant?.id}
+                  onAssistantChange={onAssistantChange}
+                  assistantDetails={assistantDetails}
+                />
+              </div>
+            )}
+          </div>
           <div style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.6)' }}>
             {callHistory.length > 0 && `${callHistory.length} calls`}
           </div>
