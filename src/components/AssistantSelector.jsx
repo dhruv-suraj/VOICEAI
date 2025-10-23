@@ -34,6 +34,13 @@ export default function AssistantSelector({
   };
 
   const selectedAssistant = assistants.find(a => a.id === selectedAssistantId);
+  const [buttonRect, setButtonRect] = useState(null);
+  const buttonRef = useEffect(() => {
+    const button = document.querySelector('[data-assistant-button]');
+    if (button && isDropdownOpen) {
+      setButtonRect(button.getBoundingClientRect());
+    }
+  }, [isDropdownOpen]);
 
   return (
     <div style={{
@@ -41,6 +48,7 @@ export default function AssistantSelector({
       minWidth: '250px',
     }}>
       <button
+        data-assistant-button
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         style={{
           width: '100%',
@@ -81,19 +89,19 @@ export default function AssistantSelector({
         </div>
       )}
 
-      {isDropdownOpen && !isLoading && (
+      {isDropdownOpen && !isLoading && buttonRect && (
         <div style={{
-          position: 'absolute',
-          top: '100%',
-          left: 0,
-          right: 0,
-          marginTop: '4px',
+          position: 'fixed',
+          top: buttonRect.bottom + 4,
+          left: buttonRect.left,
+          width: buttonRect.width,
           backgroundColor: '#2d3748',
           border: '1px solid rgba(255, 255, 255, 0.2)',
           borderRadius: '8px',
           maxHeight: '300px',
           overflowY: 'auto',
-          zIndex: 1000,
+          zIndex: 9999,
+          boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
         }}>
           {assistants.length === 0 ? (
             <div style={{

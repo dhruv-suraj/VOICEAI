@@ -625,13 +625,15 @@ export default function Overview({
         <>
           {selectedAssistant && (
             <div style={{
-              padding: '16px',
-              backgroundColor: 'rgba(102, 126, 234, 0.1)',
+              padding: '16px 20px',
+              background: 'rgba(212, 175, 55, 0.1)',
+              backdropFilter: 'blur(12px)',
               borderRadius: '12px',
-              border: '2px solid #667eea',
+              border: '1px solid rgba(212, 175, 55, 0.2)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
             }}>
               <div>
                 <div style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '4px' }}>
@@ -664,14 +666,16 @@ export default function Overview({
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1.2fr',
             gap: '16px',
-            padding: '20px',
-            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+            padding: '24px',
+            background: 'rgba(15, 26, 42, 0.5)',
+            backdropFilter: 'blur(12px)',
             borderRadius: '12px',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(212, 175, 55, 0.15)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
           }}>
 
           <div>
-            <label style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.7)', display: 'block', marginBottom: '8px' }}>
+            <label style={{ fontSize: '12px', color: 'rgba(212, 175, 55, 0.8)', display: 'block', marginBottom: '8px', fontWeight: '500', letterSpacing: '0.3px' }}>
               Customer Name
             </label>
             <input
@@ -681,18 +685,28 @@ export default function Overview({
               placeholder="John Doe"
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                padding: '12px 14px',
                 borderRadius: '8px',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                color: '#fff',
+                border: '1px solid rgba(212, 175, 55, 0.2)',
+                background: 'rgba(212, 175, 55, 0.05)',
+                color: '#f5ede0',
                 fontSize: '14px',
                 boxSizing: 'border-box',
+                transition: 'all 0.3s ease',
+                outline: 'none',
+              }}
+              onFocus={(e) => {
+                e.target.style.border = '1px solid rgba(212, 175, 55, 0.5)';
+                e.target.style.boxShadow = '0 0 12px rgba(212, 175, 55, 0.2)';
+              }}
+              onBlur={(e) => {
+                e.target.style.border = '1px solid rgba(212, 175, 55, 0.2)';
+                e.target.style.boxShadow = 'none';
               }}
             />
           </div>
           <div>
-            <label style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.7)', display: 'block', marginBottom: '8px' }}>
+            <label style={{ fontSize: '12px', color: 'rgba(212, 175, 55, 0.8)', display: 'block', marginBottom: '8px', fontWeight: '500', letterSpacing: '0.3px' }}>
               Enter Phone Number
             </label>
             <input
@@ -702,19 +716,29 @@ export default function Overview({
               placeholder="+1 (555) 000-0000"
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                padding: '12px 14px',
                 borderRadius: '8px',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                color: '#fff',
+                border: '1px solid rgba(212, 175, 55, 0.2)',
+                background: 'rgba(212, 175, 55, 0.05)',
+                color: '#f5ede0',
                 fontSize: '14px',
                 boxSizing: 'border-box',
+                transition: 'all 0.3s ease',
+                outline: 'none',
+              }}
+              onFocus={(e) => {
+                e.target.style.border = '1px solid rgba(212, 175, 55, 0.5)';
+                e.target.style.boxShadow = '0 0 12px rgba(212, 175, 55, 0.2)';
+              }}
+              onBlur={(e) => {
+                e.target.style.border = '1px solid rgba(212, 175, 55, 0.2)';
+                e.target.style.boxShadow = 'none';
               }}
             />
           </div>
 
           <div>
-            <label style={{ fontSize: '12px', color: 'rgba(255, 255, 255, 0.7)', display: 'block', marginBottom: '8px' }}>
+            <label style={{ fontSize: '12px', color: 'rgba(212, 175, 55, 0.8)', display: 'block', marginBottom: '8px', fontWeight: '500', letterSpacing: '0.3px' }}>
               Import Contacts (CSV)
             </label>
             <button
@@ -725,13 +749,24 @@ export default function Overview({
                 justifyContent: 'center',
                 gap: '8px',
                 width: '100%',
-                padding: '10px 12px',
+                padding: '12px 14px',
                 borderRadius: '8px',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                color: 'rgba(255, 255, 255, 0.8)',
+                border: '1px solid rgba(212, 175, 55, 0.3)',
+                background: 'rgba(212, 175, 55, 0.12)',
+                color: '#f4e4c1',
                 fontSize: '14px',
                 cursor: 'pointer',
+                fontWeight: '600',
+                transition: 'all 0.3s ease',
+                letterSpacing: '0.3px'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(212, 175, 55, 0.2)';
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(212, 175, 55, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(212, 175, 55, 0.12)';
+                e.currentTarget.style.boxShadow = 'none';
               }}
             >
               <Upload size={16} />
@@ -745,9 +780,11 @@ export default function Overview({
       {csvContacts.length > 0 && !isCallActive && (
         <div style={{
           padding: '16px',
-          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          background: 'rgba(15, 21, 53, 0.5)',
+          backdropFilter: 'blur(10px)',
           borderRadius: '12px',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
+          border: '1px solid rgba(0, 217, 255, 0.2)',
+          boxShadow: '0 8px 32px rgba(31, 38, 135, 0.37)'
         }}>
           <div style={{
             display: 'flex',
@@ -973,9 +1010,11 @@ export default function Overview({
           alignItems: 'center',
           gap: '16px',
           padding: '20px',
-          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          background: 'rgba(15, 21, 53, 0.5)',
+          backdropFilter: 'blur(10px)',
           borderRadius: '12px',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
+          border: '1px solid rgba(217, 70, 239, 0.2)',
+          boxShadow: '0 8px 32px rgba(31, 38, 135, 0.37)'
         }}>
           <div style={{ textAlign: 'center' }}>
             <div style={{
@@ -1027,14 +1066,23 @@ export default function Overview({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '56px',
-                height: '56px',
+                width: '60px',
+                height: '60px',
                 borderRadius: '50%',
                 border: 'none',
-                backgroundColor: isCallActive ? '#ef4444' : '#10b981',
+                background: isCallActive ? 'linear-gradient(135deg, #d4a5a5, #8b5a5a)' : 'linear-gradient(135deg, #d4af37, #f4e4c1)',
                 color: '#fff',
                 cursor: (callStatus === 'connecting' || callStatus === 'ending' || (!phoneNumber && !selectedContact) || (!selectedAssistant && !isCallActive)) ? 'not-allowed' : 'pointer',
                 opacity: (callStatus === 'connecting' || callStatus === 'ending' || (!phoneNumber && !selectedContact) || (!selectedAssistant && !isCallActive)) ? 0.6 : 1,
+                boxShadow: isCallActive ? '0 0 25px rgba(197, 113, 113, 0.5)' : '0 0 25px rgba(212, 175, 55, 0.5)',
+                fontWeight: '600',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
               }}
               title={isCallActive ? 'End Call' : 'Start Call'}
             >
@@ -1124,22 +1172,24 @@ export default function Overview({
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          backdropFilter: 'blur(4px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1000,
         }}>
           <div style={{
-            backgroundColor: '#1a202c',
+            background: 'rgba(15, 21, 53, 0.8)',
+            backdropFilter: 'blur(10px)',
             borderRadius: '12px',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(0, 217, 255, 0.3)',
             padding: '24px',
             maxWidth: '600px',
             width: '90%',
             maxHeight: '80vh',
             overflowY: 'auto',
-            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.3)',
+            boxShadow: '0 20px 60px rgba(0, 217, 255, 0.3)',
           }}>
             <div style={{
               display: 'flex',

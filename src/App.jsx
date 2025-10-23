@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import Dashboard from './Dashboard';
+import LandingPage from './pages/LandingPage';
+import SignInPage from './pages/SignInPage';
 
 const VAPI_PRIVATE_KEY = import.meta.env.VITE_VAPI_PRIVATE_KEY || '';
 const VAPI_PUBLIC_KEY = import.meta.env.VITE_VAPI_PUBLIC_KEY || '';
 
 export default function App() {
+  const [appState, setAppState] = useState('landing'); // 'landing', 'signin', 'dashboard'
   const [currentPage, setCurrentPage] = useState('overview');
   const [callHistory, setCallHistory] = useState([]);
   const [activeCall, setActiveCall] = useState(null);
@@ -21,6 +24,26 @@ export default function App() {
     console.log('Selected assistant:', assistant);
   };
 
+  const handleSignInClick = () => {
+    setAppState('signin');
+  };
+
+  const handleSignIn = () => {
+    setAppState('dashboard');
+  };
+
+  const handleBackToLanding = () => {
+    setAppState('landing');
+  };
+
+  if (appState === 'landing') {
+    return <LandingPage onSignInClick={handleSignInClick} />;
+  }
+
+  if (appState === 'signin') {
+    return <SignInPage onBack={handleBackToLanding} onSignIn={handleSignIn} />;
+  }
+
   return (
     <Dashboard
       currentPage={currentPage}
@@ -34,6 +57,7 @@ export default function App() {
       assistantDetails={assistantDetails}
       vapiPublicKey={VAPI_PUBLIC_KEY}
       vapiPrivateKey={VAPI_PRIVATE_KEY}
+      onLogout={handleBackToLanding}
     />
   );
 }
