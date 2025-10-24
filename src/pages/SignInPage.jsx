@@ -18,7 +18,6 @@ export default function SignInPage({ onBack, onSignIn }) {
     }
 
     setIsLoading(true);
-    // Simulate API call
     setTimeout(() => {
       if (email && password) {
         onSignIn();
@@ -34,7 +33,7 @@ export default function SignInPage({ onBack, onSignIn }) {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'linear-gradient(135deg, #050810 0%, #0f1a2a 25%, #1a2f4a 50%, #0f1a2a 75%, #050810 100%)',
+      background: '#050505',
       padding: '24px',
     }}>
       <button
@@ -46,27 +45,26 @@ export default function SignInPage({ onBack, onSignIn }) {
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
-          padding: '12px 20px',
-          background: 'rgba(212, 175, 55, 0.15)',
-          border: '1px solid rgba(212, 175, 55, 0.3)',
-          borderRadius: '8px',
-          color: '#f4e4c1',
+          padding: '10px 20px',
+          background: 'rgba(30, 64, 175, 0.15)',
+          border: '1px solid rgba(30, 64, 175, 0.3)',
+          borderRadius: '6px',
+          color: '#ffffff',
           fontSize: '14px',
-          fontWeight: '600',
+          fontWeight: '500',
           cursor: 'pointer',
-          transition: 'all 0.3s ease',
-          letterSpacing: '0.3px',
+          transition: 'all 0.2s ease',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = 'rgba(212, 175, 55, 0.25)';
-          e.currentTarget.style.boxShadow = '0 0 15px rgba(212, 175, 55, 0.2)';
+          e.currentTarget.style.background = 'rgba(30, 64, 175, 0.25)';
+          e.currentTarget.style.borderColor = 'rgba(30, 64, 175, 0.5)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'rgba(212, 175, 55, 0.15)';
-          e.currentTarget.style.boxShadow = 'none';
+          e.currentTarget.style.background = 'rgba(30, 64, 175, 0.15)';
+          e.currentTarget.style.borderColor = 'rgba(30, 64, 175, 0.3)';
         }}
       >
-        <ArrowLeft size={18} />
+        <ArrowLeft size={16} />
         Back
       </button>
 
@@ -74,27 +72,23 @@ export default function SignInPage({ onBack, onSignIn }) {
         width: '100%',
         maxWidth: '420px',
         padding: '48px',
-        background: 'rgba(15, 26, 42, 0.6)',
-        backdropFilter: 'blur(12px)',
-        border: '1px solid rgba(212, 175, 55, 0.2)',
-        borderRadius: '16px',
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+        background: 'rgba(10, 10, 10, 0.5)',
+        border: '1px solid rgba(30, 64, 175, 0.2)',
+        borderRadius: '8px',
       }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <div style={{ fontSize: '40px', marginBottom: '16px' }}>🎤</div>
           <h1 style={{
             fontSize: '28px',
-            fontWeight: '700',
-            background: 'linear-gradient(135deg, #d4af37, #f4e4c1)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
+            fontWeight: '800',
+            color: '#ffffff',
             marginBottom: '8px',
+            letterSpacing: '-0.5px',
           }}>
             Voice AI
           </h1>
-          <p style={{ fontSize: '14px', color: '#f5ede0', fontWeight: '300' }}>
+          <p style={{ fontSize: '14px', color: '#b0b0b0', fontWeight: '400' }}>
             Welcome back to your AI communication hub
           </p>
         </div>
@@ -104,13 +98,12 @@ export default function SignInPage({ onBack, onSignIn }) {
           <div style={{
             padding: '12px 16px',
             marginBottom: '20px',
-            background: 'rgba(197, 113, 113, 0.15)',
-            border: '1px solid rgba(197, 113, 113, 0.3)',
-            borderRadius: '8px',
-            color: '#d4a5a5',
+            background: 'rgba(220, 38, 38, 0.15)',
+            border: '1px solid rgba(220, 38, 38, 0.3)',
+            borderRadius: '6px',
+            color: '#fca5a5',
             fontSize: '13px',
             fontWeight: '500',
-            letterSpacing: '0.3px',
           }}>
             {error}
           </div>
@@ -123,20 +116,21 @@ export default function SignInPage({ onBack, onSignIn }) {
             <label style={{
               display: 'block',
               fontSize: '12px',
-              color: 'rgba(212, 175, 55, 0.8)',
+              color: '#b0b0b0',
               fontWeight: '600',
               marginBottom: '8px',
               letterSpacing: '0.3px',
+              textTransform: 'uppercase',
             }}>
               Email Address
             </label>
             <div style={{ position: 'relative' }}>
               <Mail size={16} style={{
                 position: 'absolute',
-                left: '14px',
+                left: '12px',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                color: '#d4af37',
+                color: '#3b82f6',
               }} />
               <input
                 type="email"
@@ -145,23 +139,23 @@ export default function SignInPage({ onBack, onSignIn }) {
                 placeholder="you@example.com"
                 style={{
                   width: '100%',
-                  padding: '12px 14px 12px 40px',
-                  background: 'rgba(212, 175, 55, 0.05)',
-                  border: '1px solid rgba(212, 175, 55, 0.2)',
-                  borderRadius: '8px',
-                  color: '#f5ede0',
+                  padding: '12px 12px 12px 40px',
+                  background: 'rgba(30, 64, 175, 0.05)',
+                  border: '1px solid rgba(30, 64, 175, 0.2)',
+                  borderRadius: '6px',
+                  color: '#ffffff',
                   fontSize: '14px',
                   fontWeight: '400',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.2s ease',
                   outline: 'none',
                   boxSizing: 'border-box',
                 }}
                 onFocus={(e) => {
-                  e.target.style.border = '1px solid rgba(212, 175, 55, 0.5)';
-                  e.target.style.boxShadow = '0 0 12px rgba(212, 175, 55, 0.2)';
+                  e.target.style.border = '1px solid rgba(30, 64, 175, 0.5)';
+                  e.target.style.boxShadow = '0 0 12px rgba(30, 64, 175, 0.2)';
                 }}
                 onBlur={(e) => {
-                  e.target.style.border = '1px solid rgba(212, 175, 55, 0.2)';
+                  e.target.style.border = '1px solid rgba(30, 64, 175, 0.2)';
                   e.target.style.boxShadow = 'none';
                 }}
               />
@@ -173,20 +167,21 @@ export default function SignInPage({ onBack, onSignIn }) {
             <label style={{
               display: 'block',
               fontSize: '12px',
-              color: 'rgba(212, 175, 55, 0.8)',
+              color: '#b0b0b0',
               fontWeight: '600',
               marginBottom: '8px',
               letterSpacing: '0.3px',
+              textTransform: 'uppercase',
             }}>
               Password
             </label>
             <div style={{ position: 'relative' }}>
               <Lock size={16} style={{
                 position: 'absolute',
-                left: '14px',
+                left: '12px',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                color: '#d4af37',
+                color: '#3b82f6',
               }} />
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -196,22 +191,22 @@ export default function SignInPage({ onBack, onSignIn }) {
                 style={{
                   width: '100%',
                   padding: '12px 40px 12px 40px',
-                  background: 'rgba(212, 175, 55, 0.05)',
-                  border: '1px solid rgba(212, 175, 55, 0.2)',
-                  borderRadius: '8px',
-                  color: '#f5ede0',
+                  background: 'rgba(30, 64, 175, 0.05)',
+                  border: '1px solid rgba(30, 64, 175, 0.2)',
+                  borderRadius: '6px',
+                  color: '#ffffff',
                   fontSize: '14px',
                   fontWeight: '400',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.2s ease',
                   outline: 'none',
                   boxSizing: 'border-box',
                 }}
                 onFocus={(e) => {
-                  e.target.style.border = '1px solid rgba(212, 175, 55, 0.5)';
-                  e.target.style.boxShadow = '0 0 12px rgba(212, 175, 55, 0.2)';
+                  e.target.style.border = '1px solid rgba(30, 64, 175, 0.5)';
+                  e.target.style.boxShadow = '0 0 12px rgba(30, 64, 175, 0.2)';
                 }}
                 onBlur={(e) => {
-                  e.target.style.border = '1px solid rgba(212, 175, 55, 0.2)';
+                  e.target.style.border = '1px solid rgba(30, 64, 175, 0.2)';
                   e.target.style.boxShadow = 'none';
                 }}
               />
@@ -220,12 +215,12 @@ export default function SignInPage({ onBack, onSignIn }) {
                 onClick={() => setShowPassword(!showPassword)}
                 style={{
                   position: 'absolute',
-                  right: '14px',
+                  right: '12px',
                   top: '50%',
                   transform: 'translateY(-50%)',
                   background: 'none',
                   border: 'none',
-                  color: '#d4af37',
+                  color: '#3b82f6',
                   cursor: 'pointer',
                   padding: '4px',
                 }}
@@ -239,16 +234,16 @@ export default function SignInPage({ onBack, onSignIn }) {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '13px' }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
               <input type="checkbox" style={{ cursor: 'pointer' }} />
-              <span style={{ color: '#f5ede0', fontWeight: '300' }}>Remember me</span>
+              <span style={{ color: '#b0b0b0', fontWeight: '400' }}>Remember me</span>
             </label>
             <a href="#" style={{
-              color: '#d4af37',
+              color: '#3b82f6',
               textDecoration: 'none',
               fontWeight: '600',
-              transition: 'color 0.3s ease',
+              transition: 'color 0.2s ease',
             }}
-            onMouseEnter={(e) => e.target.style.color = '#f4e4c1'}
-            onMouseLeave={(e) => e.target.style.color = '#d4af37'}
+            onMouseEnter={(e) => e.target.style.color = '#60a5fa'}
+            onMouseLeave={(e) => e.target.style.color = '#3b82f6'}
             >
               Forgot?
             </a>
@@ -260,29 +255,29 @@ export default function SignInPage({ onBack, onSignIn }) {
             disabled={isLoading}
             style={{
               width: '100%',
-              padding: '14px 20px',
-              background: isLoading ? 'rgba(212, 175, 55, 0.3)' : 'linear-gradient(135deg, #d4af37, #f4e4c1)',
-              color: isLoading ? '#d4af37' : '#050810',
+              padding: '12px 20px',
+              background: isLoading ? 'rgba(30, 64, 175, 0.3)' : '#1e40af',
+              color: '#ffffff',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '6px',
               fontSize: '14px',
-              fontWeight: '700',
+              fontWeight: '600',
               cursor: isLoading ? 'not-allowed' : 'pointer',
-              transition: 'all 0.3s ease',
+              transition: 'all 0.2s ease',
               marginTop: '20px',
-              letterSpacing: '0.5px',
-              boxShadow: isLoading ? 'none' : '0 0 20px rgba(212, 175, 55, 0.4)',
+              letterSpacing: '0.3px',
+              boxShadow: isLoading ? 'none' : '0 0 15px rgba(30, 64, 175, 0.2)',
             }}
             onMouseEnter={(e) => {
               if (!isLoading) {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 0 30px rgba(212, 175, 55, 0.6)';
+                e.currentTarget.style.background = '#3b82f6';
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(30, 64, 175, 0.4)';
               }
             }}
             onMouseLeave={(e) => {
               if (!isLoading) {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 0 20px rgba(212, 175, 55, 0.4)';
+                e.currentTarget.style.background = '#1e40af';
+                e.currentTarget.style.boxShadow = '0 0 15px rgba(30, 64, 175, 0.2)';
               }
             }}
           >
@@ -295,18 +290,18 @@ export default function SignInPage({ onBack, onSignIn }) {
           textAlign: 'center',
           marginTop: '24px',
           fontSize: '13px',
-          color: '#f5ede0',
-          fontWeight: '300',
+          color: '#b0b0b0',
+          fontWeight: '400',
         }}>
           Don't have an account?{' '}
           <a href="#" style={{
-            color: '#d4af37',
+            color: '#3b82f6',
             textDecoration: 'none',
             fontWeight: '600',
-            transition: 'color 0.3s ease',
+            transition: 'color 0.2s ease',
           }}
-          onMouseEnter={(e) => e.target.style.color = '#f4e4c1'}
-          onMouseLeave={(e) => e.target.style.color = '#d4af37'}
+          onMouseEnter={(e) => e.target.style.color = '#60a5fa'}
+          onMouseLeave={(e) => e.target.style.color = '#3b82f6'}
           >
             Sign up here
           </a>

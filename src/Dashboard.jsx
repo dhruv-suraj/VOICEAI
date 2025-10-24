@@ -69,46 +69,44 @@ export default function Dashboard({
   };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', color: '#fff', fontFamily: 'system-ui, -apple-system' }}>
-      {/* Sidebar - Luxury Style */}
+    <div style={{ display: 'flex', height: '100vh', color: '#ffffff', fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto' }}>
+      {/* Sidebar - Fin.ai Style */}
       <div style={{
         width: '250px',
-        background: 'rgba(15, 26, 42, 0.6)',
-        backdropFilter: 'blur(12px)',
+        background: 'rgba(10, 10, 10, 0.5)',
+        backdropFilter: 'blur(8px)',
         display: 'flex',
         flexDirection: 'column',
-        borderRight: '1px solid rgba(212, 175, 55, 0.15)',
+        borderRight: '1px solid rgba(30, 64, 175, 0.15)',
         overflowY: 'auto',
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
       }}>
         {/* Logo */}
         <div style={{
-          padding: '28px 20px',
-          borderBottom: '1px solid rgba(212, 175, 55, 0.2)',
+          padding: '24px 20px',
+          borderBottom: '1px solid rgba(30, 64, 175, 0.15)',
           flexShrink: 0,
-          background: 'rgba(212, 175, 55, 0.08)'
+          background: 'rgba(30, 64, 175, 0.05)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{
-              width: '40px',
-              height: '40px',
-              background: 'linear-gradient(135deg, #d4af37 0%, #f4e4c1 100%)',
-              borderRadius: '10px',
+              width: '36px',
+              height: '36px',
+              background: 'rgba(30, 64, 175, 0.2)',
+              borderRadius: '6px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '20px',
-              fontWeight: 'bold',
-              boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)'
+              fontSize: '18px',
             }}>🎤</div>
-            <h1 style={{ fontSize: '24px', fontWeight: '700', letterSpacing: '0.5px', margin: 0, background: 'linear-gradient(135deg, #d4af37, #f4e4c1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <h1 style={{ fontSize: '18px', fontWeight: '700', margin: 0, color: '#ffffff', letterSpacing: '-0.5px' }}>
               Voice AI
             </h1>
           </div>
         </div>
 
         {/* Navigation */}
-        <nav style={{ flex: 1, padding: '16px 8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <nav style={{ flex: 1, padding: '12px 8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentPage === item.id;
@@ -120,31 +118,31 @@ export default function Dashboard({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '12px',
-                  padding: '12px 16px',
-                  borderRadius: '10px',
-                  border: isActive ? '1px solid rgba(212, 175, 55, 0.4)' : '1px solid transparent',
-                  background: isActive ? 'rgba(212, 175, 55, 0.12)' : 'transparent',
+                  padding: '10px 14px',
+                  borderRadius: '6px',
+                  border: isActive ? '1px solid rgba(30, 64, 175, 0.3)' : '1px solid transparent',
+                  background: isActive ? 'rgba(30, 64, 175, 0.15)' : 'transparent',
                   cursor: 'pointer',
-                  fontSize: '14px',
-                  color: isActive ? '#f4e4c1' : 'rgba(245, 237, 224, 0.7)',
+                  fontSize: '13px',
+                  color: isActive ? '#60a5fa' : '#b0b0b0',
                   fontWeight: isActive ? '600' : '500',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  boxShadow: isActive ? '0 0 12px rgba(212, 175, 55, 0.2)' : 'none'
+                  transition: 'all 0.2s ease',
+                  boxShadow: isActive ? '0 0 12px rgba(30, 64, 175, 0.15)' : 'none'
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.background = 'rgba(212, 175, 55, 0.08)';
-                    e.currentTarget.style.transform = 'translateX(4px)';
+                    e.currentTarget.style.background = 'rgba(30, 64, 175, 0.1)';
+                    e.currentTarget.style.color = '#ffffff';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
                     e.currentTarget.style.background = 'transparent';
-                    e.currentTarget.style.transform = 'translateX(0)';
+                    e.currentTarget.style.color = '#b0b0b0';
                   }
                 }}
               >
-                <Icon size={18} style={{ color: isActive ? '#d4af37' : 'rgba(245, 237, 224, 0.6)' }} />
+                <Icon size={16} style={{ color: isActive ? '#3b82f6' : 'currentColor' }} />
                 <span>{item.label}</span>
               </button>
             );
@@ -153,10 +151,10 @@ export default function Dashboard({
 
         {/* Footer info */}
         <div style={{
-          padding: '16px 16px',
-          borderTop: '1px solid rgba(212, 175, 55, 0.15)',
-          fontSize: '12px',
-          color: 'rgba(212, 175, 55, 0.6)',
+          padding: '14px 12px',
+          borderTop: '1px solid rgba(30, 64, 175, 0.15)',
+          fontSize: '11px',
+          color: '#6b7280',
           textAlign: 'center',
           letterSpacing: '0.3px'
         }}>
@@ -166,27 +164,24 @@ export default function Dashboard({
 
       {/* Main Content */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        {/* Header - Luxury Style */}
+        {/* Header - Fin.ai Style */}
         <div style={{
-          padding: '24px 32px',
-          borderBottom: '1px solid rgba(212, 175, 55, 0.15)',
-          background: 'rgba(15, 26, 42, 0.5)',
-          backdropFilter: 'blur(12px)',
+          padding: '20px 32px',
+          borderBottom: '1px solid rgba(30, 64, 175, 0.1)',
+          background: 'rgba(5, 5, 5, 0.8)',
+          backdropFilter: 'blur(8px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: 1 }}>
             <h2 style={{
               margin: 0,
-              fontSize: '28px',
+              fontSize: '24px',
               fontWeight: '700',
-              letterSpacing: '0.5px',
-              background: 'linear-gradient(135deg, #d4af37, #f4e4c1)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
+              letterSpacing: '-0.5px',
+              color: '#ffffff'
             }}>
               {getPageTitle()}
             </h2>
@@ -201,14 +196,14 @@ export default function Dashboard({
               </div>
             )}
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{
-              fontSize: '13px',
-              color: '#f4e4c1',
-              padding: '8px 16px',
-              background: 'rgba(212, 175, 55, 0.15)',
-              borderRadius: '8px',
-              border: '1px solid rgba(212, 175, 55, 0.3)',
+              fontSize: '12px',
+              color: '#b0b0b0',
+              padding: '8px 14px',
+              background: 'rgba(30, 64, 175, 0.1)',
+              borderRadius: '6px',
+              border: '1px solid rgba(30, 64, 175, 0.2)',
               letterSpacing: '0.3px',
               fontWeight: '500'
             }}>
@@ -219,28 +214,28 @@ export default function Dashboard({
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '8px',
-                padding: '8px 16px',
-                background: 'rgba(197, 113, 113, 0.15)',
-                border: '1px solid rgba(197, 113, 113, 0.3)',
-                borderRadius: '8px',
-                color: '#d4a5a5',
-                fontSize: '13px',
+                gap: '6px',
+                padding: '8px 14px',
+                background: 'rgba(220, 38, 38, 0.1)',
+                border: '1px solid rgba(220, 38, 38, 0.2)',
+                borderRadius: '6px',
+                color: '#fca5a5',
+                fontSize: '12px',
                 fontWeight: '600',
                 cursor: 'pointer',
-                transition: 'all 0.3s ease',
+                transition: 'all 0.2s ease',
                 letterSpacing: '0.3px',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(197, 113, 113, 0.25)';
-                e.currentTarget.style.boxShadow = '0 0 12px rgba(197, 113, 113, 0.2)';
+                e.currentTarget.style.background = 'rgba(220, 38, 38, 0.2)';
+                e.currentTarget.style.borderColor = 'rgba(220, 38, 38, 0.4)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(197, 113, 113, 0.15)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.background = 'rgba(220, 38, 38, 0.1)';
+                e.currentTarget.style.borderColor = 'rgba(220, 38, 38, 0.2)';
               }}
             >
-              <LogOut size={16} />
+              <LogOut size={14} />
               Logout
             </button>
           </div>
@@ -251,7 +246,7 @@ export default function Dashboard({
           flex: 1,
           overflowY: 'auto',
           padding: '32px',
-          backgroundImage: 'linear-gradient(180deg, rgba(212,175,55,0.04) 0%, transparent 50%)',
+          background: '#050505',
           position: 'relative'
         }}>
           {renderPage()}

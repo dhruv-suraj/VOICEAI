@@ -9,73 +9,60 @@
 }
 
 body {
-  background: linear-gradient(135deg, #050810 0%, #0f1a2a 25%, #1a2f4a 50%, #0f1a2a 75%, #050810 100%);
+  background: #050505;
   background-attachment: fixed;
-  color: #f5ede0;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.3px;
+  line-height: 1.6;
 }
 
 #root {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/* Luxury glass effect */
+/* Fin.ai glass effect */
 .glass {
-  background: rgba(26, 47, 74, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  border-radius: 12px;
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(30, 64, 175, 0.2);
+  border-radius: 8px;
 }
 
-/* Premium gold glow effects */
-.glow-gold {
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+/* Blue glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(30, 64, 175, 0.3);
 }
 
-.glow-rose {
-  box-shadow: 0 0 25px rgba(197, 113, 113, 0.3);
-}
-
-.gold-accent {
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
-}
-
-/* Luxury text styling */
-.luxury-text {
-  background: linear-gradient(135deg, #d4af37 0%, #f4e4c1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+/* Fin.ai text styling */
+.fin-text {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 /* Smooth transitions */
 button, a {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
 }
 
-/* Luxury scrollbar styling */
+/* Fin.ai scrollbar styling */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(212, 175, 55, 0.05);
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #d4af37, #c9a961);
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  background: #1a1a1a;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #e4bf47, #d9b971);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  background: #2a2a2a;
 }
