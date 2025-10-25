@@ -1,0 +1,84 @@
+.integrations {
+  position: relative;
+  padding: calc(var(--spacing-unit) * 14) 0;
+  background: radial-gradient(circle at top, rgba(255, 79, 0, 0.24), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+.integrations::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at bottom right, rgba(248, 161, 69, 0.18), transparent 60%);
+  filter: blur(0px);
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--spacing-unit) * 6);
+  align-items: start;
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+}
+
+.sectionLabel::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+}
+
+.content p {
+  color: var(--color-text-secondary);
+  max-width: 540px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: calc(var(--spacing-unit) * 4);
+}
+
+.integrationList {
+  display: grid;
+  gap: 16px;
+}
+
+.integrationItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--font-size-md);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.integrationItem span:last-child {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 960px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}

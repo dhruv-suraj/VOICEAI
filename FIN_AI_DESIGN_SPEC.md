@@ -1,4 +1,4 @@
-# Fin.ai Website - Complete Design Specification
+# VOICE AI Website - Complete Design Specification
 
 ## Color Palette
 ```

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Fin.ai dark theme
+        // VOICE AI dark theme
         dark: {
           bg: '#050505',
           bgAlt: '#0a0a0a',

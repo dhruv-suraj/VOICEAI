@@ -70,7 +70,7 @@ export default function Dashboard({
 
   return (
     <div style={{ display: 'flex', height: '100vh', color: '#ffffff', fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto' }}>
-      {/* Sidebar - Fin.ai Style */}
+      {/* Sidebar - VOICE AI Style */}
       <div style={{
         width: '250px',
         background: 'rgba(10, 10, 10, 0.5)',
@@ -164,7 +164,7 @@ export default function Dashboard({
 
       {/* Main Content */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        {/* Header - Fin.ai Style */}
+        {/* Header - VOICE AI Style */}
         <div style={{
           padding: '20px 32px',
           borderBottom: '1px solid rgba(30, 64, 175, 0.1)',

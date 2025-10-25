@@ -9,13 +9,11 @@
 }
 
 body {
-  background: #050505;
-  background-attachment: fixed;
-  color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  background: var(--color-background-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
 }
 
 #root {
@@ -23,46 +21,13 @@ body {
   min-height: 100vh;
 }
 
-/* Fin.ai glass effect */
-.glass {
-  background: rgba(10, 10, 10, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(30, 64, 175, 0.2);
-  border-radius: 8px;
+button,
+button:focus-visible,
+.button:focus-visible {
+  outline: none;
 }
 
-/* Blue glow effects */
-.glow-blue {
-  box-shadow: 0 0 20px rgba(30, 64, 175, 0.3);
-}
-
-/* Fin.ai text styling */
-.fin-text {
-  color: #ffffff;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-}
-
-/* Smooth transitions */
-button, a {
-  transition: all 0.2s ease;
-}
-
-/* Fin.ai scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1a1a1a;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2a2a2a;
+button:focus-visible,
+.button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 79, 0, 0.35);
 }

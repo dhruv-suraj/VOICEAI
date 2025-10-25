@@ -1,0 +1,55 @@
+.testimonials {
+  background: var(--color-background-primary);
+}
+
+.testimonialsInner {
+  display: grid;
+  gap: calc(var(--spacing-unit) * 5);
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+
+.sectionLabel::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+}
+
+.grid {
+  display: grid;
+  gap: calc(var(--spacing-unit) * 3);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  min-height: 240px;
+  display: grid;
+  gap: 24px;
+}
+
+.card::after {
+  display: none;
+}
+
+.card p {
+  font-size: var(--font-size-xl);
+  line-height: 1.55;
+  color: var(--color-text-primary);
+}
+
+.card footer {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

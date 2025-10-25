@@ -1,4 +1,4 @@
-# Fin.ai Website Replication - Design Comparison Guide
+# VOICE AI Website Replication - Design Comparison Guide
 
 ## Side-by-Side Feature Comparison
 

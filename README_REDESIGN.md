@@ -1,4 +1,4 @@
-# Voice AI - Fin.ai Exact Replica Website
+# Voice AI - VOICE AI Exact Replica Website
 
 ## 🎯 Project Overview
 

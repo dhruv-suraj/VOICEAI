@@ -1,0 +1,388 @@
+/* global.css */
+
+/* 2.1: Font Face Declarations (Placeholder) */
+/* NOTE: In a real project, you would host these font files and declare them here. */
+/* For this exercise, we will rely on system fallbacks if the fonts are not installed. */
+
+/* 2.2: CSS Variables (Design Tokens) at the :root level */
+:root {
+  /* Color Palette */
+  --color-background-primary: #111111;
+  --color-background-secondary: #1a1a1a;
+  --color-surface-card: #f4f1ec;
+  --color-surface-tint: rgba(255, 255, 255, 0.05);
+  --color-accent-primary: #ff4f00;
+  --color-accent-secondary: #f8a145;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a0a0a0;
+  --color-text-muted: rgba(245, 245, 245, 0.6);
+  --color-border-default: #333333;
+  --color-border-light: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-family-serif: 'LL Ivory', Georgia, serif;
+  --font-family-sans: 'LL Medium', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'Aeonik Fono', 'SFMono-Regular', 'Courier New', monospace;
+
+  /* Typography Scale */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 40px;
+  --font-size-5xl: 56px;
+  --font-size-6xl: 72px;
+
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  /* Spacing */
+  --spacing-unit: 8px;
+  --spacing-2: calc(var(--spacing-unit) * 2);
+  --spacing-3: calc(var(--spacing-unit) * 3);
+  --spacing-4: calc(var(--spacing-unit) * 4);
+  --spacing-5: calc(var(--spacing-unit) * 5);
+  --spacing-6: calc(var(--spacing-unit) * 6);
+  --spacing-8: calc(var(--spacing-unit) * 8);
+  --spacing-10: calc(var(--spacing-unit) * 10);
+  --spacing-12: calc(var(--spacing-unit) * 12);
+  --spacing-16: calc(var(--spacing-unit) * 16);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-soft: 0 20px 70px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 30px 80px rgba(17, 17, 17, 0.45);
+  --shadow-elevated: 0 40px 120px rgba(0, 0, 0, 0.5);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0.9, 0.2, 1);
+  --transition-fast: 180ms var(--ease-standard);
+  --transition-base: 300ms var(--ease-standard);
+  --transition-slow: 500ms var(--ease-emphasized);
+}
+
+/* 2.3: Global Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* 2.4: Typographic Styles */
+h1 {
+  font-family: var(--font-family-serif);
+  font-weight: 700;
+  font-size: var(--font-size-6xl);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 calc(var(--spacing-unit) * 3);
+}
+
+h2 {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: var(--font-size-5xl);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.015em;
+  margin: 0 0 calc(var(--spacing-unit) * 2);
+}
+
+h3 {
+  font-family: var(--font-family-serif);
+  font-weight: 500;
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-snug);
+  margin: 0 0 calc(var(--spacing-unit) * 2);
+}
+
+h4 {
+  font-family: var(--font-family-sans);
+  font-weight: 600;
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-snug);
+  margin: 0 0 calc(var(--spacing-unit) * 1.5);
+}
+
+h5 {
+  font-family: var(--font-family-sans);
+  font-weight: 600;
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-normal);
+  margin: 0 0 calc(var(--spacing-unit) * 1.5);
+}
+
+p {
+  font-family: var(--font-family-sans);
+  font-weight: 400;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  margin: 0 0 calc(var(--spacing-unit) * 2);
+}
+
+small {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+/* 2.5: Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/* Layout Utilities */
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.section-spacing {
+  padding: calc(var(--spacing-unit) * 14) 0;
+}
+
+.section-spacing-tight {
+  padding: calc(var(--spacing-unit) * 10) 0;
+}
+
+.background-grid {
+  position: relative;
+  isolation: isolate;
+}
+
+.background-grid::before {
+  content: '';
+  position: absolute;
+  inset: -120px 0 -120px;
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.35;
+  z-index: -2;
+}
+
+.background-grid::after {
+  content: '';
+  position: absolute;
+  inset: -160px;
+  background: radial-gradient(circle at top right, rgba(255, 79, 0, 0.25), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(248, 161, 69, 0.18), transparent 60%);
+  filter: blur(0px);
+  z-index: -3;
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+  color: var(--color-text-primary);
+  box-shadow: 0 14px 40px rgba(255, 79, 0, 0.35);
+}
+
+.button-primary:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 18px 60px rgba(255, 79, 0, 0.45);
+}
+
+.button-ghost {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.button-ghost:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  position: relative;
+}
+
+.button-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 0;
+  background-color: currentColor;
+  transition: width var(--transition-base);
+}
+
+.button-link:hover::after {
+  width: 100%;
+}
+
+/* Animation Lexicon */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.fade-in-up.is-visible {
+  animation: fadeInUp 600ms var(--ease-standard) forwards;
+}
+
+.subtle-scale-on-hover {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.subtle-scale-on-hover:hover {
+  transform: scale(1.03);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.staggered-children-reveal > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms var(--ease-standard), transform 500ms var(--ease-standard);
+}
+
+.staggered-children-reveal.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.staggered-children-reveal.is-visible > *:nth-child(2) {
+  transition-delay: 120ms;
+}
+
+.staggered-children-reveal.is-visible > *:nth-child(3) {
+  transition-delay: 240ms;
+}
+
+.staggered-children-reveal.is-visible > *:nth-child(4) {
+  transition-delay: 360ms;
+}
+
+.staggered-children-reveal.is-visible > *:nth-child(5) {
+  transition-delay: 480ms;
+}
+
+/* Cards */
+.surface-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  padding: calc(var(--spacing-unit) * 4);
+  backdrop-filter: blur(24px);
+  position: relative;
+  overflow: hidden;
+}
+
+.surface-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.14), transparent 55%);
+  opacity: 0.4;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

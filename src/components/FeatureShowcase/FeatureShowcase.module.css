@@ -1,0 +1,85 @@
+.featureSection {
+  background: linear-gradient(180deg, #f4f1ec 0%, #f7f3ee 60%, #f4f1ec 100%);
+  color: #1a1a1a;
+  padding: calc(var(--spacing-unit) * 14) 0;
+}
+
+.featureInner {
+  display: grid;
+  gap: calc(var(--spacing-unit) * 6);
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b45f06;
+}
+
+.sectionLabel::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+.featureInner h2 {
+  color: #1a1a1a;
+  max-width: 540px;
+}
+
+.featureInner p {
+  max-width: 560px;
+  color: #4a4a4a;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: calc(var(--spacing-unit) * 3);
+}
+
+.featureCard {
+  position: relative;
+  min-height: 280px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 40px 80px rgba(28, 28, 28, 0.1);
+  color: #111111;
+}
+
+.featureCard::after {
+  display: none;
+}
+
+.cardBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 79, 0, 0.08);
+  color: #b45f06;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.featureCard h3 {
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+.featureCard p {
+  color: #4a4a4a;
+}
+
+@media (max-width: 768px) {
+  .featureSection {
+    padding: calc(var(--spacing-unit) * 12) 0;
+  }
+}
